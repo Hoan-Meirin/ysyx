@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void p_1(int *p,char **q,int count);
+
 int main(int argc, char *argv[])
 {
     // create two arrays we care about
@@ -16,12 +18,13 @@ int main(int argc, char *argv[])
     // first way using indexing
 	int *p = ages;
 	char **q = names;
-    for(i = 0; i < count; i++) {
-        printf("%s has %d years alive.\n",
-                *q++, *p++);
-    }
+    // for(i = 0; i < count; i++) {
+    //     printf("%s has %d years alive.\n",
+    //             *q++, *p++);
+    // }
+	p_1(p,q,count);
 
-    printf("---\n");
+    printf("1 ---\n");
 
     // setup the pointers to the start of the arrays
     int *cur_age = ages;
@@ -44,13 +47,30 @@ int main(int argc, char *argv[])
     printf("---\n");
 
     // fourth way with pointers in a stupid complex way
-    for(cur_name = names, cur_age = ages;
-            (cur_age - ages) < count;
-            cur_name++, cur_age++)
+	cur_name = names, cur_age = ages;
+    while((cur_age - ages) < count)
     {
         printf("%s lived %d years so far.\n",
                 cur_name[0], cur_age[0]);
+				cur_name++, cur_age++;
     }
+printf("---\n");
 
+	p = ages;
+	q = names;
+	for(i = 0; i < count; i++)
+	{
+		printf("%s is %d years old again.\nand the address is %p and %p\n",*q++,*p++,q-1,p-1);
+	}
     return 0;
 }
+
+void p_1(int *p,char **q,int count)
+{
+	for(int i = 0; i < count; i++) {
+        printf("%s has %d years alive.\n",
+                *q++, *p++);
+    }	
+}
+
+// 重复操作懒得写了
