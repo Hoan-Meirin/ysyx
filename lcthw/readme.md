@@ -1,7 +1,7 @@
 # Readme
 ## 如何使用lcthw
-简体中文：https://wizardforcel.gitbooks.io/lcthw/content/
-		 https://github.com/wizardforcel/lcthw-zh
+简体中文：https://wizardforcel.gitbooks.io/lcthw/content/ <br>
+		 https://github.com/wizardforcel/lcthw-zh <br>
 不提供EN版
 ## Q&A
 ### 为什么要开这个记录
