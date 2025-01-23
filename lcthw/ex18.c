@@ -85,7 +85,7 @@ void test_sorting(int *numbers, int count, compare_cb cmp, int*(sort)(int*,int*,
     }
     printf("\n");
 
-    free(sorted);
+    // free(sorted);
 }
 
 
